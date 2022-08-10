@@ -13,6 +13,7 @@ To run [user_backend] only
   1. clone project
   2. change directory to user_backend and perform (npm install)
   3. run (npm run development)
+  - Have your mongoDB instance running to be able to successfully persist data to it
   
   User [API-ENDPOINTS]
   
