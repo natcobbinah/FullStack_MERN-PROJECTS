@@ -2,16 +2,27 @@
 This project is a series of hands-on exercises following through Shama Hoque's FullStack_MERN-PROJECTS, making changes where necessary to get a working
 code and meet the software development requirements as illustrated throughout the book
 
-## On user_backend
+## On mern-configtest-app
+A minimal full-stack app, to illustrate connecting a frontend-framework (react) to backend(server) app, configuring Webpack and Babel to compile and bundle code during development, and to build production-ready code.
+
+To run [mern-configtest-app] only
+  1. clone project
+  2. change directory to mern-configtest-app and perform (yarn add)
+  3. run (yarn run development)
+  4. Open your browser and [http://localhost:3000] to view output, in
+     the browser
+
+## On mern-user-app
   - The [user_backend] folder, serves as the (server-side) of the application using Node, Express, and MongoDB.
   - The [UserModel] for storing user data is implemented with Mongoose ODM (Object Data Modelling)
   - The [userAPI] endpoints to perform CRUD operations,was achieved with Express library
   - The [UserAuthentication] for protected routes was implemented with JWT and express-jwt
   - The [UserPassword field] was encrypted with crypto library in node
+  - The [ui_client] was implemented with react-library
   
-To run [user_backend] only
+To run [mern-user-app] only
   1. clone project
-  2. change directory to user_backend and perform (npm install)
+  2. change directory to [mern-user-app] and perform (npm install)
   3. run (npm run development)
   - Have your mongoDB instance running to be able to successfully persist data to it
   
