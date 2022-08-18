@@ -1,0 +1,7 @@
+{
+  "verbose": false,
+  "watch": [   
+    "./user_backend/server/"
+  ],
+  "exec": "webpack --mode=development --config webpack.config.server.js && webpack --config webpack.config.client.js"
+}

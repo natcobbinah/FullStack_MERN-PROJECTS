@@ -1,0 +1,259 @@
+openapi: 3.0.1
+info:
+  title: User API
+  version: 1.0.0
+  description: API endpoints to communicate with user data
+  contact:
+    email: fmg3ckali@gmail.com
+    name: Nathaniel Cobbinah
+    url: https://natcobbinah.github.io/
+  license:
+    name: MIT
+    url: https://choosealicense.com/licenses/mit/
+paths:
+  /api/users:
+    summary: Endpoint used to create or list users in the system
+    description: Registers a new user or retrieves all users in the system
+    get:
+      summary: Retrieve all user records from the system
+      description: List all current registered users in the system
+      operationId: list
+      responses:
+        '200':
+          content:
+            application/json:
+              examples:
+                User Records retrieved successfully:
+                  value: |-
+                    [
+                        {
+                            "_id": "62f3670f0782e68d068b9463",
+                            "name": "John Smith",
+                            "email": "john@smith.info",
+                            "created": "2022-08-10T08:06:39.754Z"
+                        }
+                    ]
+          description: Fetches all user records from the system
+        default:
+          description: Default error sample response
+      tags:
+        - User
+    post:
+      summary: Creates a new user record into the system
+      description: Creates a new User registered account in  the system
+      operationId: create
+      requestBody:
+        description: A new order object
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+        required: true
+      responses:
+        '201':
+          content:
+            application/json:
+              examples:
+                User Account created successfully:
+                  value: |-
+                    { 
+                     "name":"John Smith",
+                     "email":"john@smith.info",
+                    }
+          description: Creates a new user account in the system
+        default:
+          description: Default error sample response
+      tags:
+        - User
+  /api/users/{userId}:
+    summary: >-
+      Endpoint used to retrieve a single userRecord, update userRecord or delete
+      userRecord is user is loggedIn successfully
+    description: A verified loggedIn user can only perform operations on this urlPath
+    get:
+      summary: Retrieves user Information
+      description: >-
+        Retrieves a valid registered user in the system, who wants to view own
+        records
+      operationId: read
+      parameters:
+      - name: userId
+        in: path
+        description: The userId of the user.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              examples:
+                User Information retrieved successfully:
+                  value: |-
+                    { 
+                     "name":"John Smith",
+                     "email":"john@smith.info",
+                    }
+          description: Retrieved a loggedIn user information
+        default:
+          description: Default error sample response
+      tags:
+        - User
+      security:
+       - bearerAuth: []
+    put:
+      summary: Update user record
+      description: >-
+        Updates a verified user who is loggedIn and wants to edit his/her
+        records
+      operationId: update
+      parameters:
+      - name: userId
+        in: path
+        description: The userId of the user.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      requestBody:
+        description: A new order object
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              examples:
+                User Record updated Successfully:
+                  value: |-
+                    { 
+                     "name":"John Smith",
+                     "email":"john@smith.info",
+                     "updated": "24232423242",
+                    }
+          description: Updates a loggedIn user record
+        default:
+          description: Default error sample response
+      tags:
+        - User
+      security:
+       - bearerAuth: []
+    delete:
+      summary: Delete a user from the system
+      description: >-
+        Deletes a verified loggedIn user, who wants to delete account
+        permanently from the system
+      operationId: remove
+      parameters:
+      - name: userId
+        in: path
+        description: The userId of the user.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              examples:
+                User Record deleted successfully:
+                  value: |-
+                    { 
+                     "name":"John Smith",
+                     "email":"john@smith.info",
+                    }
+          description:  Removes a user account from the system
+        default:
+          description: Default error sample response
+      tags:
+        - User
+      security:
+       - bearerAuth: []
+  /auth/signin:
+    summary: Login to userAccount
+    description: A registered User can login using this endpoint
+    post:
+      summary: User Login entry into the system
+      description: Verifies user credentials and allow entry into the system
+      operationId: signin
+      requestBody:
+        description: A new order object
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserLogin'
+        required: true
+      responses:
+        '200':
+          content:
+            application/json:
+              examples:
+                Login successful:
+                  value: |-
+                    { 
+                     "id": "xxxxxxxxxx",
+                     "name":"John Smith",
+                     "email":"john@smith.info",
+                    }
+          description: logs in a verified user into the system
+        default:
+          description: Default error sample response
+      tags:
+        - User Authentication
+  /auth/signout:
+    summary: Endpoint to logout user from the system
+    description: Clears userToken, thus logging out user from the system
+    get:
+      summary: Logout user from the system
+      description: >-
+        Clear validToken, and disable access to userInfo unless user is loggedIn
+        again
+      operationId: signout
+      responses:
+        '200':
+          content:
+            application/json:
+              examples:
+                User signed out successfully:
+                  value: signed out
+          description: Clears userToken from the system
+        default:
+          description: Default error sample response
+      tags:
+        - User Authentication
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        name:
+          type: string
+        email:
+          type: string
+        password:
+          type: string
+      xml:
+        name: User
+    UserLogin:
+      type: object
+      properties:
+        email:
+          type: string
+        password:
+          type: string
+      xml:
+        name: UserLogin
+  securitySchemes:
+    bearerAuth:            # arbitrary name for the security scheme
+      type: http
+      scheme: bearer
+      bearerFormat: JWT 
+ 
