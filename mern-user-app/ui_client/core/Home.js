@@ -2,6 +2,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core";
 import {Card, CardContent, CardMedia, Typography} from "@material-ui/core";
 import unicornbikeImg from '../assets/images/unicornbike.jpg'
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({
     card: {
@@ -22,6 +23,8 @@ export default function Home(){
     const classes = useStyles()
     return (
         <Card className={classes.card}>
+            <Link to="/users">Users</Link>{' '}
+            <Link to="/signup">Signup</Link>{' '}
             <Typography variant="h6" className={classes.title}>
                 Home Page
             </Typography>
