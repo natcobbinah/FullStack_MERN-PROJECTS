@@ -5,7 +5,8 @@ import {
     IconButton, ListItem, ListItemAvatar, ListItemSecondaryAction, ListItemText,
     Paper, List, Avatar, Divider, makeStyles, Typography
 } from "@material-ui/core";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, Navigate } from "react-router-dom";
+import DeleteUser from "./DeleteUser";
 
 const useStyles = makeStyles(theme => ({
     root: theme.mixins.gutters({
@@ -68,15 +69,12 @@ export default function Profile() {
                         auth.isAuthenticated().user && auth.isAuthenticated().user._id == user._id &&
                         (
                             <ListItemSecondaryAction>
-                                <Link to={"/user/edit" + user._id}>
+                                <Link to={"/user/edit/" + user._id}>
                                     <IconButton aria-label="Edit" color="primary">
-                                        {/*  <Edit/>  */}  Edit
+                                        Edit
                                     </IconButton>
                                 </Link>
-                                {/*  <DeleteUser userId={user._id}/> */}
-                                <IconButton aria-label="Delete" color="danger">
-                                    Delete
-                                </IconButton>
+                                <DeleteUser userId={user._id} />
                             </ListItemSecondaryAction>
                         )
                     }
