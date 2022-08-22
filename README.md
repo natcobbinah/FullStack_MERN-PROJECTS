@@ -24,9 +24,12 @@ To run [mern-user-app] only
   1. clone project
   2. change directory to [mern-user-app] and perform (npm install)
   3. run (npm run development)
+  4. Open a second [cmd interface], and type [npm run start],
+  5. Open the browser, [ http://localhost:3000 ], should present the UI to allow performing available operations and user interactions
   - Have your mongoDB instance running to be able to successfully persist data to it
   
   User [API-ENDPOINTS]
+  Can be tested using any suitable restAPI test tools (PostMan, ARC(Advanced Rest Client a chrome extension) or curl
   
       1. Creating a User
          > POST http://localhost:3000/api/users/
