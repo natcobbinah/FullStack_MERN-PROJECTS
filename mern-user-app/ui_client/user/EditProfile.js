@@ -100,7 +100,6 @@ export default function EditProfile(){
 
     return (
         <Card className={classes.card}>
-            {console.log(values)}
             <CardContent>
                 <Typography variant="h6" className={classes.title}>
                     Edit Profile
@@ -129,6 +128,5 @@ export default function EditProfile(){
                 </Button>
             </CardActions>
         </Card>
-    )
-  
+    ) 
 }

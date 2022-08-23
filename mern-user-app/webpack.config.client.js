@@ -34,7 +34,7 @@ const config = {
                 test: /\.(woff|woff2|eot|ttf|otf)$/i,
                 type: 'asset/resource',
             },
-        ]
+        ],
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
@@ -43,7 +43,7 @@ const config = {
     resolve: {
         alias: {
             'react-dom': '@hot-loader/react-dom'
-        }
+        },
     }
 }
 

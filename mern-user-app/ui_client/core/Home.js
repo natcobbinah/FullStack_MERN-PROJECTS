@@ -23,9 +23,9 @@ export default function Home(){
     const classes = useStyles()
     return (
         <Card className={classes.card}>
-            <Link to="/users">Users</Link>{' '} |
+            {/* <Link to="/users">Users</Link>{' '} |
             <Link to="/signup">Signup</Link>{' '} |
-            <Link to="/signin">Signin</Link>{' '} |
+            <Link to="/signin">Signin</Link>{' '} | */}
             <Typography variant="h6" className={classes.title}>
                 Home Page
             </Typography>

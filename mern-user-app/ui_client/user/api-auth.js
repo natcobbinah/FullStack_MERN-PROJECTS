@@ -2,7 +2,7 @@ import { baseUrl } from "./constants";
 import { signinUrl } from "./constants";
 import { signoutUrl } from "./constants";
 
-const signin = async (user) => {
+const signin = async (user) =>  {
     try {
         let response = await fetch(`${baseUrl}/${signinUrl}`, {
             method: 'POST',

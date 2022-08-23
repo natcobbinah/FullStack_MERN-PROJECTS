@@ -8,10 +8,12 @@ import Profile from './user/Profile.js'
 import PrivateRoute from './auth/privateRoute.js'
 import EditProfile from './user/EditProfile.js'
 import auth from './auth/auth-helper.js'
+import Menu from './core/Menu.js'
 
 const MainRouter = () => {
     return (
         <div>
+            <Menu/>
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="users" element={<Users />} />

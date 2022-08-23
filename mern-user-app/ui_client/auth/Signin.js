@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import { Navigate } from "react-router";
+import { Navigate, useNavigate } from "react-router";
 import auth from "./auth-helper";
 import { signin } from "../user/api-auth";
-import { makeStyles, Card, CardContent, Typography, TextField, CardActions, Button,
-    Icon } from "@material-ui/core";
+import {
+    makeStyles, Card, CardContent, Typography, TextField, CardActions, Button,
+    Icon
+} from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
     card: {
@@ -33,6 +35,7 @@ const useStyles = makeStyles(theme => ({
 
 export default function Signin(props) {
     const classes = useStyles();
+    const navigate = useNavigate();
 
     const [values, setValues] = useState({
         email: '',
@@ -63,27 +66,15 @@ export default function Signin(props) {
                         redirectToReferrer: true
                     })
                 })
+                console.log("Set values completed")
+            }
+
+            const { redirectToReferrer } = values
+            if (redirectToReferrer) {
+                console.log("SignIn successful")
+                navigate("/", { replace: true });
             }
         })
-
-       /*  const { from } = props.location.state || {
-            from: {
-                pathname: '/'
-            }
-        }
-
-        const { redirectToReferrer } = values
-        if (redirectToReferrer) {
-            return (
-                <Navigate to={from} />
-            )
-        } */
-        const { redirectToReferrer } = values
-        if (redirectToReferrer) {
-            console.log("SignIn successful")
-            console.log(props)
-            console.log(sessionStorage.getItem('jwt'))
-        }
     }
 
     return (
