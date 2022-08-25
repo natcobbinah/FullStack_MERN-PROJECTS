@@ -7,7 +7,7 @@ import {
 } from "@material-ui/core";
 import { Link, useParams, Navigate } from "react-router-dom";
 import DeleteUser from "./DeleteUser";
-//import { Edit } from "@material-ui/icons";
+import EditIcon from '@mui/icons-material/Edit';
 
 const useStyles = makeStyles(theme => ({
     root: theme.mixins.gutters({
@@ -72,7 +72,7 @@ export default function Profile() {
                             <ListItemSecondaryAction>
                                 <Link to={"/user/edit/" + user._id}>
                                     <IconButton aria-label="Edit" color="primary">
-                                       {/*  <Edit/> */}Edit
+                                        <EditIcon/>
                                     </IconButton>
                                 </Link>
                                 <DeleteUser userId={user._id} />

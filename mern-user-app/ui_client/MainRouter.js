@@ -5,9 +5,7 @@ import Signin from './auth/Signin.js'
 import Signup from './user/Signup.js'
 import Users from './user/Users.js'
 import Profile from './user/Profile.js'
-import PrivateRoute from './auth/privateRoute.js'
 import EditProfile from './user/EditProfile.js'
-import auth from './auth/auth-helper.js'
 import Menu from './core/Menu.js'
 
 const MainRouter = () => {
@@ -19,15 +17,7 @@ const MainRouter = () => {
                 <Route path="users" element={<Users />} />
                 <Route path="signup" element={<Signup />} />
                 <Route path="signin" element={<Signin />} />
-                <Route path="/user/edit/:userId" element={
-                    auth.isAuthenticated() ?
-                        (
-                            <EditProfile />
-                        ) :
-                        (
-                            <Navigate to='/signin'/>
-                        )
-                } />
+                <Route path="/user/edit/:userId" element={<EditProfile />}/>
                 <Route path="user/:userId" element={<Profile />} />
             </Routes>
         </div>

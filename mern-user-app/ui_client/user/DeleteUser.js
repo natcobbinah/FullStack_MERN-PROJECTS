@@ -5,7 +5,7 @@ import auth from "../auth/auth-helper";
 import { remove } from "./api-user";
 import React, {useState} from 'react'
 import PropTypes from 'prop-types'
-//import DeleteIcon from '@mui/icons-material/Delete';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 export default function DeleteUser(props){
     const [open, setOpen] = useState(false);
@@ -41,7 +41,7 @@ export default function DeleteUser(props){
     return (
         <span>
             <IconButton aria-label="Delete" onClick={clickButton} color="secondary">
-               {/*  <DeleteIcon/> */}Delete
+               <DeleteIcon/> 
             </IconButton>
 
             <Dialog open={open} onClose={handleRequestClose}>

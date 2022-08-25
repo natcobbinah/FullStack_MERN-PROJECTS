@@ -3,6 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import auth from '../auth/auth-helper';
 import { withRouter } from './withRouter';
+import HomeIcon from '@mui/icons-material/Home';
 
 const Menu = ({ router } = props) => {
     let { navigate } = router;
@@ -15,7 +16,7 @@ const Menu = ({ router } = props) => {
                 </Typography>
                 <Link to="/">
                     <IconButton aria-label="Home" style={isActive(navigate, "/")} >
-                        HomeIcon
+                         <HomeIcon/>
                     </IconButton>
                 </Link>
                 <Link to="/users">
