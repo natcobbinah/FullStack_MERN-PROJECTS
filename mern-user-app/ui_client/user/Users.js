@@ -21,6 +21,7 @@ export default function Users() {
     const [users, setUsers] = useState([])
 
     useEffect(() => {
+        console.log("listing users");
         const abortController = new AbortController();
         const signal = abortController.signal;
 

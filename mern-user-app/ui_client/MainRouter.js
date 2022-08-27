@@ -23,4 +23,4 @@ const MainRouter = () => {
         </div>
     )
 }
-export default MainRouter
+export  {MainRouter};

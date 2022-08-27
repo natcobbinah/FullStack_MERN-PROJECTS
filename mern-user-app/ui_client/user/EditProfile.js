@@ -104,9 +104,9 @@ export default function EditProfile(){
                 <Typography variant="h6" className={classes.title}>
                     Edit Profile
                 </Typography>
-                <TextField id="name" label="Name" className={classes.textField} values={values.name} 
+                <TextField id="name" label="Name" className={classes.textField} value={values.name} 
                     onChange={handleChange('name')} margin="normal"/>
-                <TextField id="email" label="Email" className={classes.textField} values={values.email} 
+                <TextField id="email" label="Email" className={classes.textField} value={values.email} 
                     onChange={handleChange('email')} margin="normal"/>
                 <TextField id="password" label="Password" className={classes.textField} values={values.password} 
                     onChange={handleChange('password')} margin="normal"/>
