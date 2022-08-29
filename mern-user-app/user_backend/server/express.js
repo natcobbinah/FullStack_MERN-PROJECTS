@@ -20,9 +20,10 @@ const { MainRouter } = require("../../ui_client/MainRouter.js");
 const { theme } = require("../../ui_client/theme.js");
 const { ServerStyleSheets, ThemeProvider } = require("@material-ui/core/styles");
 
+
 const CURRENT_WORKING_DIR = process.cwd()
 const app = express();
-devBundle.compile(app); //only for development mode (removed for production)
+//devBundle.compile(app); //only for development mode (removed for production)
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -57,9 +58,9 @@ app.get("*", (req, res) => {
     const markup = ReactDOMServer.renderToString(
         sheets.collect(
             <StaticRouter location={req.url} context={context}>
-                <ThemeProvider theme={theme}>
-                    <MainRouter />
-                </ThemeProvider>
+                    <ThemeProvider theme={theme}>
+                        <MainRouter />
+                    </ThemeProvider>
             </StaticRouter>
         )
     );

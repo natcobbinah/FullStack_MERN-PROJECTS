@@ -16,7 +16,7 @@ const Menu = ({ router } = props) => {
                 </Typography>
                 <Link to="/">
                     <IconButton aria-label="Home" style={isActive(navigate, "/")} >
-                       {/*   <HomeIcon/> */}HomeIco
+                       <HomeIcon/>
                     </IconButton>
                 </Link>
                 <Link to="/users">

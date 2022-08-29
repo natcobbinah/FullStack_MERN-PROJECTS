@@ -11,16 +11,16 @@ import Menu from './core/Menu.js'
 const MainRouter = () => {
     return (
         <div>
-            <Menu/>
+            <Menu />
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="users" element={<Users />} />
                 <Route path="signup" element={<Signup />} />
                 <Route path="signin" element={<Signin />} />
-                <Route path="/user/edit/:userId" element={<EditProfile />}/>
+                <Route path="/user/edit/:userId" element={<EditProfile />} />
                 <Route path="user/:userId" element={<Profile />} />
             </Routes>
         </div>
     )
 }
-export  {MainRouter};
+export { MainRouter };

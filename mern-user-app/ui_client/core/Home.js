@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core";
 import {Card, CardContent, CardMedia, Typography} from "@material-ui/core";
-import unicornbikeImg from '../assets/images/unicornbike.jpg'
+import unicornbikeImg from '../assets/images/unicornbike.jpg';
 import { Link } from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({
@@ -16,7 +16,7 @@ const useStyles = makeStyles(theme => ({
     },
     media: {
         minHeight: 400
-    }
+    },
 }))
 
 export default function Home(){

@@ -5,7 +5,7 @@ const theme = createTheme({
     typography: {
         useNextVariants: true,
     },
-    palette:{
+    palette: {
         primary: {
             light: '#5c67a3',
             main: '#3f4771',
@@ -25,4 +25,4 @@ const theme = createTheme({
 
 })
 
-export  {theme};
+export { theme };

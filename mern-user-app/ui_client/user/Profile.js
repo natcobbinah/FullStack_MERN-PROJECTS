@@ -72,7 +72,7 @@ export default function Profile() {
                             <ListItemSecondaryAction>
                                 <Link to={"/user/edit/" + user._id}>
                                     <IconButton aria-label="Edit" color="primary">
-                                        {/* <EditIcon/> */}EditIco
+                                        <EditIcon/> 
                                     </IconButton>
                                 </Link>
                                 <DeleteUser userId={user._id} />

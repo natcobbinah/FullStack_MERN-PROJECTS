@@ -16,9 +16,9 @@ const App = () => {
 
     return (
         <BrowserRouter>
-            <ThemeProvider theme={theme}>
-                <MainRouter />
-            </ThemeProvider>
+                <ThemeProvider theme={theme}>
+                    <MainRouter />
+                </ThemeProvider>
         </BrowserRouter>
     )
 }

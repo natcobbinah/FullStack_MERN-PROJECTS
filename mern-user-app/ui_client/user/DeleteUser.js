@@ -41,7 +41,7 @@ export default function DeleteUser(props){
     return (
         <span>
             <IconButton aria-label="Delete" onClick={clickButton} color="secondary">
-             {/*   <DeleteIcon/>  */}DeleteIco
+                <DeleteIcon/>  
             </IconButton>
 
             <Dialog open={open} onClose={handleRequestClose}>
